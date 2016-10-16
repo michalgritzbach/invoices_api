@@ -14,7 +14,7 @@ class Client < ApplicationRecord
 
   def to_builder
     Jbuilder.new do |client|
-      client.(self, :id, :name)
+      client.call(self, :id, :name)
     end
   end
 end

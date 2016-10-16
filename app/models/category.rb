@@ -13,7 +13,7 @@ class Category < ApplicationRecord
 
   def to_builder
     Jbuilder.new do |category|
-      category.(self, :id, :name)
+      category.call(self, :id, :name)
     end
   end
 end
