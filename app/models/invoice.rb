@@ -16,4 +16,8 @@
 class Invoice < ApplicationRecord
   belongs_to :client
   belongs_to :category
+
+  def price_with_vat
+    price * (1 + (vat_rate.to_f / 100))
+  end
 end
