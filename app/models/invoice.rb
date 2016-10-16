@@ -17,6 +17,8 @@ class Invoice < ApplicationRecord
   belongs_to :client
   belongs_to :category
 
+  scope :summary, -> { select('price, vat_rate, strftime("%Y-%m-01", issued_at) as date').group(:date) }
+
   def price_with_vat
     price * (1 + (vat_rate.to_f / 100))
   end
