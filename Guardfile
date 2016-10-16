@@ -16,15 +16,8 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard 'annotate' do
-  watch( 'db/schema.rb' )
-
-  # Uncomment the following line if you also want to run annotate anytime
-  # a model file changes
-  #watch( 'app/models/**/*.rb' )
-
-  # Uncomment the following line if you are running routes annotation
-  # with the ":routes => true" option
-  #watch( 'config/routes.rb' )
+  watch('db/schema.rb')
+  watch('app/models/**/*.rb')
 end
 
 # Note: The cmd option is now required due to the increasing number of ways
@@ -36,8 +29,8 @@ end
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: "bundle exec rspec --color" do
-  require "guard/rspec/dsl"
+guard :rspec, cmd: 'bundle exec rspec' do
+  require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
   # Feel free to open issues for suggestions and improvements

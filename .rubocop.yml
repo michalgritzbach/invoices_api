@@ -1,2 +1,17 @@
 Rails:
   Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'Guardfile'
+    - 'db/schema.rb'
+
+Metrics/LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: false
