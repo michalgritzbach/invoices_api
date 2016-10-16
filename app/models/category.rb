@@ -10,4 +10,10 @@
 
 class Category < ApplicationRecord
   has_many :invoices
+
+  def to_builder
+    Jbuilder.new do |category|
+      category.(self, :id, :name)
+    end
+  end
 end

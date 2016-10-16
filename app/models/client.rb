@@ -11,4 +11,10 @@
 
 class Client < ApplicationRecord
   has_many :invoices
+
+  def to_builder
+    Jbuilder.new do |client|
+      client.(self, :id, :name)
+    end
+  end
 end
